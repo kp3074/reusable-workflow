@@ -20,7 +20,7 @@ jobs:
           ls -al
 
       - name: Run tests
-        run: echo "${{ inputes.config-path }}"
+        run: echo "${{ inputs.config-path }}"
 
       - name: Deploy
         run: echo "Deploying..."
