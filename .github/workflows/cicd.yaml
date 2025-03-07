@@ -9,9 +9,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run tests
-        needs: checkout code
         run: echo "Running tests..."
 
       - name: Deploy
-        needs: Run tests
         run: echo "Deploying..."
