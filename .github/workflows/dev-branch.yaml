@@ -1,0 +1,24 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: # Specifies the event triggering the workflow
+  workflow_call: # Indicates that this is a reusable workflow
+    inputs: # Defines the inputs that can be passed from the caller workflow
+      config-path: # Name of the input
+        required: true # Specifies that this input is mandatory
+        type: string
+      appType:
+        required: true
+        type: string
+
+jobs:
+  DEV:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: echo "${{ inputs.config-path }}"
+
+      - name: Deploy
+        run: echo "testing this application ${{ inputs.appType}}..."
